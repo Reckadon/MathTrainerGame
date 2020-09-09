@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:background="@drawable/username_popup">
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="Enter your Name   (Important!)"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/etUsername"
+        android:hint="Create a Username"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/text_field"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/btnUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="okay"
+        android:background="@drawable/custom_button"
+        android:layout_marginTop="13dp"/>
+
+</LinearLayout>

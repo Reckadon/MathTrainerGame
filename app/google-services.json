@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "240315926642",
+    "firebase_url": "https://math-trainer-bb62e.firebaseio.com",
+    "project_id": "math-trainer-bb62e",
+    "storage_bucket": "math-trainer-bb62e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240315926642:android:5e49f4290d309eb0249aeb",
+        "android_client_info": {
+          "package_name": "com.romitMohane.mathtrainer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240315926642-h57jpu6s7i3a9eclk3u1smt55rrgemmo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVUzE6xyGuod2jYKaRynq5pj2WRIBvYGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240315926642-h57jpu6s7i3a9eclk3u1smt55rrgemmo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

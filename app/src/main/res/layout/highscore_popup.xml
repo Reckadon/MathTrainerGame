@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="5dp"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="350dp"
+    android:background="@drawable/popup">
+
+    <TextView
+        android:id="@+id/tvCongrats"
+        android:layout_width="208dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Awesome! You made a new Highscore!"
+        android:textColor="#ffffff"
+        android:textSize="22sp" />
+    <TextView
+        android:id="@+id/tvPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Previous HighScore=0"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tvNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="New HighScore=0"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/btnOkay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/custom_button"
+        android:text="noice"
+        android:textSize="16sp"/>
+
+
+</LinearLayout>
