@@ -175,23 +175,22 @@ public class MainActivity extends AppCompatActivity implements logoutDialog.logo
                     return;
                 }
             }
+            databaseUsers.child(firebaseUser.getUid()).child("username").setValue(username);
+
             FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
 
             UserProfileChangeRequest profile =new UserProfileChangeRequest.Builder()
                     .setDisplayName(username).build();
 
             user.updateProfile(profile)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
-                                usernamePopup.dismiss();
-                                Toast.makeText(getApplicationContext(),"Username changed Successfully!",Toast.LENGTH_SHORT).show();
-                                getSupportActionBar().setSubtitle("Logged in as "+firebaseUser.getDisplayName());
-                            }
-                            else
-                                Toast.makeText(getApplicationContext(),"Invalid!",Toast.LENGTH_SHORT).show();
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()){
+                            usernamePopup.dismiss();
+                            Toast.makeText(getApplicationContext(),"Username changed Successfully!",Toast.LENGTH_SHORT).show();
+                            getSupportActionBar().setSubtitle("Logged in as "+firebaseUser.getDisplayName());
                         }
+                        else
+                            Toast.makeText(getApplicationContext(),"Invalid!",Toast.LENGTH_SHORT).show();
                     });
         });
         usernamePopup.show();
