@@ -55,7 +55,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
-    private DatabaseReference databaseUsers;
+    private DatabaseReference databaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +66,7 @@ public class SecondActivity extends AppCompatActivity {
 
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
-        databaseUsers= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+        databaseUser = FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
 
         Intent intent=getIntent();
         diff = intent.getIntExtra("difficulty", 0);
@@ -84,7 +84,7 @@ public class SecondActivity extends AppCompatActivity {
                 key="hScore";
                 break;
         }
-        databaseUsers.addValueEventListener(new ValueEventListener() {
+        databaseUser.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 highScore=Integer.parseInt(dataSnapshot.child(key).getValue().toString());
@@ -313,8 +313,8 @@ public class SecondActivity extends AppCompatActivity {
     }
     int eScore,mScore,hScore,max,total;
     private void UpdateScore(){
-        databaseUsers.child(key).setValue(String.valueOf(highScore));
-        databaseUsers.addValueEventListener(new ValueEventListener() {
+        databaseUser.child(key).setValue(String.valueOf(highScore));
+        databaseUser.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 eScore=Integer.parseInt(dataSnapshot.child("eScore").getValue().toString());
@@ -322,8 +322,8 @@ public class SecondActivity extends AppCompatActivity {
                 hScore=Integer.parseInt(dataSnapshot.child("hScore").getValue().toString());
                 max=Math.max(eScore,Math.max(mScore,highScore));
                 total=eScore+mScore+hScore;
-                databaseUsers.child("max").setValue(String.valueOf(max));
-                databaseUsers.child("total").setValue(String.valueOf(total));
+                databaseUser.child("max").setValue(String.valueOf(max));
+                databaseUser.child("total").setValue(String.valueOf(total));
             }
 
             @Override
