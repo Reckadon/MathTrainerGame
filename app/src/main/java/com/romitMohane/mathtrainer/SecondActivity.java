@@ -320,7 +320,7 @@ public class SecondActivity extends AppCompatActivity {
                 eScore=Integer.parseInt(dataSnapshot.child("eScore").getValue().toString());
                 mScore=Integer.parseInt(dataSnapshot.child("mScore").getValue().toString());
                 hScore=Integer.parseInt(dataSnapshot.child("hScore").getValue().toString());
-                max=Math.max(eScore,Math.max(mScore,highScore));
+                max=Math.max(eScore,Math.max(mScore,hScore));
                 total=eScore+mScore+hScore;
                 databaseUser.child("max").setValue(String.valueOf(max));
                 databaseUser.child("total").setValue(String.valueOf(total));
